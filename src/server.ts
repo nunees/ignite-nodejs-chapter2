@@ -1,8 +1,5 @@
-import express from 'express';
-import { CreateCourse } from './routes';
+import express from "express";
 
 const app = express();
 
-app.get("/", CreateCourse);
-
-app.listen(3333);
+app.listen(3333, () => console.log("server is running..."));
