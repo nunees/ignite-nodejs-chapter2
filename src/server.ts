@@ -1,8 +1,16 @@
-import express from 'express';
-import { CreateCourse } from './routes';
+import express from "express";
+
+import { categoriesRoutes } from "./routes/categories.routes";
+import { specificationsRoutes } from "./routes/specifications.routes";
 
 const app = express();
 
-app.get("/", CreateCourse);
+// Tell express that we will use JSON
+app.use(express.json());
 
-app.listen(3333);
+// Routes
+// Setting the categories argument, all the paths will start with "categories"
+app.use("/categories", categoriesRoutes);
+app.use("/specifications", specificationsRoutes);
+
+app.listen(3333, () => console.log("server is running..."));
