@@ -1,0 +1,13 @@
+version: "2.6"
+
+services:
+  app: 
+    # execute the docker file
+    build: .
+    # set listen port
+    container_name: rentx
+    ports:
+      - 3333:3333
+    volumes:
+      # where the files are located and where to go(Same location of WORKDIR)
+      - .:/usr/app
