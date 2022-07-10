@@ -1,6 +1,19 @@
 version: "2.6"
-
 services:
+  database:
+    image: postgres
+    container_name: database_rentx
+    restart: always
+    ports: 
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=docker
+      - POSTGRES_PASSWORD=ignite
+      - POSTGRES_DB=rentx
+    volumes:
+      - pgdata:/data/postgres
+      # set this flag to run both services on the same address
+    #network_mode: host
   app: 
     # execute the docker file
     build: .
@@ -11,3 +24,14 @@ services:
     volumes:
       # where the files are located and where to go(Same location of WORKDIR)
       - .:/usr/app
+    links:
+      - database
+    depends_on:
+      - database
+    # set this flag to run both services on the same address
+    #network_mode: host
+
+# Reference to pgdata in database:volumes
+volumes:
+  pgdata:
+    driver: local
