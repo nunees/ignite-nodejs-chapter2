@@ -1,5 +1,5 @@
 # Image to download
-FROM node:lts
+FROM node
 
 # Folder where our files are located(remote)
 WORKDIR /usr/app
