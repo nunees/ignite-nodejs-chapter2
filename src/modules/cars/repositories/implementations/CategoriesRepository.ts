@@ -1,24 +1,20 @@
+import { getRepository, Repository } from "typeorm";
+
 import { Category } from "../../entities/Category";
 import {
   ICategoriesRepository,
   ICreateCategoryDTO,
 } from "../ICategoriesRepository";
 
-/**
- * Singleton
- *  *Precisa observar se ha um necessidade da classe ser instanciada apenas
- *  uma vez
- *  *Nao utilizar sem necessidade
- */
-
 class CategoriesRepository implements ICategoriesRepository {
-  private categories: Category[];
+  // Create a private repository variable with the type of Category that holds the crud operations
+  private repository: Repository<Category>;
 
   // eslint-disable-next-line no-use-before-define
   private static INSTANCE: CategoriesRepository;
 
   private constructor() {
-    this.categories = [];
+    this.repository = getRepository(Category);
   }
 
   public static getInstance(): CategoriesRepository {
@@ -28,29 +24,24 @@ class CategoriesRepository implements ICategoriesRepository {
     return CategoriesRepository.INSTANCE;
   }
 
-  create({ description, name }: ICreateCategoryDTO): void {
-    const category = new Category();
-
-    /**
-     * Assign atributes to an object that was created early.
-     * This way we dont need to manually assign values to objects,
-     * like category.name = name.
-     */
-    Object.assign(category, {
+  async create({ description, name }: ICreateCategoryDTO): Promise<void> {
+    // const category = new Category();
+    const category = this.repository.create({
       name,
       description,
-      created_at: new Date(),
     });
 
-    this.categories.push(category);
+    await this.repository.save(category);
   }
 
-  list(): Category[] {
-    return this.categories;
+  async list(): Promise<Category[]> {
+    const categories = await this.repository.find();
+    return categories;
   }
 
-  findByName(name: string): Category {
-    const category = this.categories.find((category) => category.name === name);
+  async findByName(name: string): Promise<Category> {
+    // SELECT * FROM CATEGORIES WHERE NAME = "name" LIMIT 1
+    const category = await this.repository.findOne({ name });
     return category;
   }
 }
