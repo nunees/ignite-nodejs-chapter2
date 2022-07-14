@@ -10,19 +10,9 @@ class CategoriesRepository implements ICategoriesRepository {
   // Create a private repository variable with the type of Category that holds the crud operations
   private repository: Repository<Category>;
 
-  // eslint-disable-next-line no-use-before-define
-  // private static INSTANCE: CategoriesRepository;
-
-  public constructor() {
+  constructor() {
     this.repository = getRepository(Category);
   }
-
-  // public static getInstance(): CategoriesRepository {
-  //   if (!CategoriesRepository.INSTANCE) {
-  //     CategoriesRepository.INSTANCE = new CategoriesRepository();
-  //   }
-  //   return CategoriesRepository.INSTANCE;
-  // }
 
   async create({ description, name }: ICreateCategoryDTO): Promise<void> {
     // const category = new Category();
