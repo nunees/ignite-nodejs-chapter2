@@ -1,5 +1,7 @@
 import { container } from "tsyringe";
 
+import { UsersRepository } from "../../modules/accounts/repositories/implementations/UsersRepository";
+import { IUsersReposotory } from "../../modules/accounts/repositories/IUsersRepository";
 import { ICategoriesRepository } from "../../modules/cars/repositories/ICategoriesRepository";
 import { CategoriesRepository } from "../../modules/cars/repositories/implementations/CategoriesRepository";
 import { SpecificationsRepository } from "../../modules/cars/repositories/implementations/SpecificationRepository";
@@ -18,4 +20,9 @@ container.registerSingleton<ISpecificationsRepository>(
   "SpecificationsRepository",
   // Class we want to call
   SpecificationsRepository
+);
+
+container.registerSingleton<IUsersReposotory>(
+  "UsersRepository",
+  UsersRepository
 );
