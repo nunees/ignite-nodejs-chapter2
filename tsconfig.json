@@ -10,19 +10,13 @@
       "@config/*": ["config/*"],
       "@shared/*": ["shared/*"],
       "@errors/*": ["errors/*"],
-      "@utils/*": ["utils/*"],
-      "@dtos/*": ["dtos/*"]
+      "@utils/*": ["utils/*"]
     },
     "resolveJsonModule": true,
-
     "allowJs": true,
-
     "outDir": "./dist",
-
     "esModuleInterop": true,
-
     "forceConsistentCasingInFileNames": true,
-
     "skipLibCheck": true
   }
 }
