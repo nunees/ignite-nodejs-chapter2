@@ -1,19 +1,18 @@
 # Application  requirements
 
 ## Register car
-***
 **FUNCTIONAL REQUIREMENTS**
-- [ ] Should be possible to register a new car.
+- [x] Should be possible to register a new car.
 - [ ] Should be possible to list all categories.
 
 **BUSINESS RULE**
-- [ ] Should not be possible to register a vehicle with the same license plate.
+- [x] Should not be possible to register a vehicle with the same license plate.
 - [ ] Should not be possible to change the vehicle license plate.
-- [ ] The car should be register with available as default.
+- [x] The car should be register with available as default.
 - [ ] Only administrators should be able to register a car.
 
 ## List all cars
-***
+
 **FUNCTIONAL REQUIREMENTS**
 - [ ] Should be possible to list all available cars.
 - [ ] Should be possible to list all available cars by the category name.
@@ -23,7 +22,7 @@
 - [ ] User can list cars without the need of login.
 
 ## Car specifications register
-***
+
 **FUNCTIONAL REQUIREMENTS**
 - [ ] Should be possible to register a car specification.
 - [ ] Should be possible to list all specifications.
@@ -35,7 +34,7 @@
 - [ ] User must be administrator to register a new specification.
 
 ## Car image registration
-***
+
 **FUNCTIONAL REQUIREMENTS**
 - [ ] Should be possible to insert a car photo.
 - [ ] Should be able to list all cars.
@@ -48,7 +47,7 @@
 - [ ] User should be administrator to insert a new record.
 
 ## Rent
-***
+
 **FUNCTIONAL REQUIREMENTS**
 - [ ] Should be able to register a rent.
 - [ ] Should be able to list available cars for rent.
