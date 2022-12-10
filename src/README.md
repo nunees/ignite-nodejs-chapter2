@@ -9,7 +9,7 @@
 - [x] Should not be possible to register a vehicle with the same license plate.
 - [ ] Should not be possible to change the vehicle license plate.
 - [x] The car should be register with available as default.
-- [ ] Only administrators should be able to register a car.
+- [x] Only administrators should be able to register a car.
 
 ## List all cars
 
