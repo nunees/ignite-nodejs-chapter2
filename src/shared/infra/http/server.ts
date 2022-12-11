@@ -1,5 +1,6 @@
 import "reflect-metadata";
 import express, { Request, Response, NextFunction } from "express";
+import morgan from "morgan";
 import swaggerUi from "swagger-ui-express";
 
 import { AppError } from "@shared/errors/AppError";
@@ -14,6 +15,8 @@ import "@shared/container";
 createConnection();
 
 const app = express();
+
+app.use(morgan(":method :url :status - :response-time ms"));
 
 // Tell express that we will use JSON
 app.use(express.json());

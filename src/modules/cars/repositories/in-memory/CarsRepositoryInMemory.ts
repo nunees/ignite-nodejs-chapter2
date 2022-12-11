@@ -38,10 +38,10 @@ export class CarsRepositoryInMemory implements ICarsRepository {
       .filter((car) => car.available === true)
       .filter((car) => {
         if (
-          car.available === true &&
-          ((brand && car.brand === brand) ||
-            (category_id && car.category_id === category_id) ||
-            (name && car.name === name))
+          car.available === true ||
+          (brand && car.brand === brand) ||
+          (category_id && car.category_id === category_id) ||
+          (name && car.name === name)
         ) {
           return car;
         }
