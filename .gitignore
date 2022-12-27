@@ -3,3 +3,4 @@ dist
 yarn.lock
 tmp/*
 diagrama.png
+.env
