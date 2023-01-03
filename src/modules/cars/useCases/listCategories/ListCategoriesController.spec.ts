@@ -59,5 +59,7 @@ describe("Create Category Controller", () => {
     const response = await request(app).get("/categories");
 
     expect(response.status).toBe(200);
+    expect(response.body.all.length).toBe(1);
+    expect(response.body.all[0]).toHaveProperty("id");
   });
 });
