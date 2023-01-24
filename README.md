@@ -8,7 +8,7 @@
 ![License](https://img.shields.io/github/license/nunees/rentx-backend.svg?style=for-the-badge)
 
 ## **Sobre**
-____
+
 
 Aplicação desenvolvida utilizando typescript e nodejs como servidor backend, foram utilizados conceitos e ferramentas como:
   - S.O.L.I.D Principles
@@ -20,7 +20,7 @@ Aplicação desenvolvida utilizando typescript e nodejs como servidor backend, f
   - Upload de arquivos
 
 ## **Requisitos da aplicação**
-___
+
 ### Cadastro de carro
 
 **RF**
