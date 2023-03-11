@@ -13,7 +13,9 @@ describe("Authentucate User", () => {
   beforeEach(() => {
     userRepositoryInMemory = new UserRepositoryInMemory();
     authenticateUserUseCase = new AuthenticateUserUseCase(
-      userRepositoryInMemory
+      userRepositoryInMemory,
+      null,
+      null
     );
     createUserUseCase = new CreateUserUseCase(userRepositoryInMemory);
   });

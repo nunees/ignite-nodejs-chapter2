@@ -4,7 +4,7 @@ export class CreateUsersToken1677447058460 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
-        name: "users_token",
+        name: "users_tokens",
         columns: [
           {
             name: "id",
@@ -22,6 +22,11 @@ export class CreateUsersToken1677447058460 implements MigrationInterface {
           {
             name: "expires_date",
             type: "timestamp",
+          },
+          {
+            name: "created_at",
+            type: "timestamp",
+            default: "now()",
           },
         ],
         foreignKeys: [

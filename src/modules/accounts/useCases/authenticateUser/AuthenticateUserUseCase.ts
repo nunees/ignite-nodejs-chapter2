@@ -29,7 +29,7 @@ export class AuthenticateUserUseCase {
     private usersRepository: IUsersRepository,
     @inject("UsersTokensRepository")
     private usersTokensRepository: IUsersTokensRepository,
-    @inject("DaysjsDateProvider")
+    @inject("DayJsDateProvider")
     private dateProvider: IDateProvider
   ) {}
 
@@ -71,9 +71,11 @@ export class AuthenticateUserUseCase {
 
     await this.usersTokensRepository.create({
       user_id: user.id,
-      expires_date: refresh_token_expires_date,
       refresh_token,
+      expires_date: refresh_token_expires_date,
     });
+
+    console.log("ok");
 
     const tokenReturn: IResponse = {
       token,
