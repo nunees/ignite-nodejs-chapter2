@@ -39,7 +39,7 @@ export class UsersTokensRepository implements IUsersTokensRepository {
   }
 
   async findByRefreshToken(refresh_token: string): Promise<UserTokens> {
-    const userToken = await this.repository.findOne(refresh_token);
+    const userToken = await this.repository.findOne({ refresh_token });
     return userToken;
   }
 

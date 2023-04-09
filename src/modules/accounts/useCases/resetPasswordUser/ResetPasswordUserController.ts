@@ -12,10 +12,10 @@ export class ResetPasswordUserController {
     );
 
     await resetPasswordUserUseCase.execute({
-      token: token as string,
+      token: String(token),
       password,
     });
 
-    return response.json();
+    return response.send();
   }
 }
