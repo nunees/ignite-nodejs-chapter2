@@ -3,3 +3,4 @@ dist
 tmp/*
 diagrama.png
 .env
+coverage
