@@ -8,9 +8,15 @@
 ![License](https://img.shields.io/github/license/nunees/rentx-backend.svg?style=for-the-badge)
 
 ## **Sobre**
+Essa API foi construída com **NodeJS** + **Typescript** como uma empresa fictícia de **aluguel de carros** chamada **RentX** durante o curso **Ignite de NodeJS** da [**Rocketseat**](https://github.com/Rocketseat).
+A aplicação possui as seguintes funcionalidades:
+- Cadastro de usuários
+- Autenticação de usuários e geração de token
+- Cadastro de carros e itens relacionados ao carro como especificações e categorias
+- Realização de um aluguel e devolução do carro
+- Recuperação de senha do usuário através de e-mail
 
-
-Aplicação desenvolvida utilizando typescript e nodejs como servidor backend, foram utilizados conceitos e ferramentas como:
+Foram utilizados as seguintes ferramentas e padrões:
   - S.O.L.I.D Principles
   - Testes de integração e unitarios
   - TypeORM e TSyringe
@@ -19,101 +25,29 @@ Aplicação desenvolvida utilizando typescript e nodejs como servidor backend, f
   - Postgres Database
   - Upload de arquivos
 
-## **Requisitos da aplicação**
+## 💻 Instalação, Dependências e Executando o Projeto
+**1.** Clone este repositório 
+```
+git clone git@github.com:nunees/rentx-backend.git
+``` 
+**2.** Vá até o diretório raiz do projeto
+```
+cd rentx-backend
+``` 
+**3.** Instale as dependências necessárias
+```
+yarn 
+ou
+npm install
+```
+**4.** Execute a aplicação
+```
+yarn dev
+```
 
-### Cadastro de carro
+## :floppy_disk: Usando a Aplicação
+Para realização de **requisições** na aplicação, deve ser utilizado o **Insomnia** ou **Postman**, importando o [arquivo](insomnia_requests) de requisições já existente neste diretório.
+Atentar-se aos parâmetros necessários no **Header**.
 
-**RF**
-- Deve ser possível cadastrar um novo carro.
-
-
-**RN** 
-- Não deve ser possível cadastrar um carro com uma placa já existente.
-- O carro deve ser cadastrado, por padrão, com disponibilidade.
-- O usuário responsável pelo cadastro deve ser um usuário administrador.
-
-### Listagem de carros
-
-**RF** 
-- Deve ser possível listar todos os carros disponíveis
-- Deve ser possível listar todos os carros disponíveis pelo - nome da categoria
-- Deve ser possível listar todos os carros disponíveis pelo - nome da marca
-- Deve ser possível listar todos os carros disponíveis pelo - nome do carro
-
-**RN**
-- O usuário não precisar estar logado no sistema.
-
-
-### Cadastro de Especificação no carro
-
-**RF**
-- Deve ser possível cadastrar uma especificação para um carro
-
-
-**RN**
-- Não deve ser possível cadastrar uma especificação para um - carro não cadastrado.
-- Não deve ser possível cadastrar uma especificação já - existente para o mesmo carro.
-- O usuário responsável pelo cadastro deve ser um usuário - administrador.
-
-
-### Cadastro de imagens do carro
-
-**RF**
-- Deve ser possível cadastrar a imagem do carro
-
-**RNF**
-- Utilizar o multer para upload dos arquivos
-
-**RN**
-- O usuário deve poder cadastrar mais de uma imagem para o - mesmo carro
-- O usuário responsável pelo cadastro deve ser um usuário - administrador.
-
-
-### Alugel de carro
-
-**RF**
-- Deve ser possível cadastrar um aluguel
-
-
-**RN**
-- O aluguel deve ter duração mínima de 24 horas.
-- Não deve ser possível cadastrar um novo aluguel caso já - exista um aberto para o mesmo usuário
-- Não deve ser possível cadastrar um novo aluguel caso já - exista um aberto para o mesmo carro
-- O usuário deve estar logado na aplicação
-- Ao realizar um aluguel, o status do carro deverá ser - alterado para indisponível
-
-
-### Devolução de carro 
-
-**RF**
-- Deve ser possível realizar a devolução de um carro
-
-**RN**
-- Se o carro for devolvido com menos de 24 horas, deverá - ser cobrado diária completa.
-- Ao realizar a devolução, o carro deverá ser liberado para - outro aluguel.
-- Ao realizar a devolução, o usuário deverá ser liberado - para outro aluguel.
-- Ao realizar a devolução, deverá ser calculado o total do - aluguel. 
-- Caso o horário de devolução seja superior ao horário - previsto de entrega, deverá ser cobrado multa - proporcional aos dias de atraso.
-- Caso haja multa, deverá ser somado ao total do aluguel.
-- O usuário deve estar logado na aplicação
-
-
-### Listagem de Alugueis para usuário
-
-**RF**
-- Deve ser possível realizar a busca de todos os alugueis para o usuário
-
-**RN**
-- O usuário deve estar logado na aplicação
-
-
-### Recuperar Senha
-
-**RF**
-- Deve ser possível o usuário recuperar a senha informando o e-mail
-- O usuário deve receber um e-mail com o passo a passo para a recuperação da senha
-- O usuário deve conseguir inserir uma nova senha
-
-**RN**
-- O usuário precisa informar uma nova senha
-- O link enviado para a recuperação deve expirar em 3 horas
+## :syringe: Evidência de Testes
+Nesta aplicação, são contemplados **Testes Unitários e Testes de Integração** utilizando o framework de testes **Jest**, visando garantir o correto funcionamento das funcionalidades e manter a aplicação de acordo com os requisitos. <br/>
